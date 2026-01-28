@@ -21,7 +21,7 @@ const Home = () => (
       <div className="rays-overlay">
       <div className="content-container">
         <ShinyText
-          fontSize="5rem"
+          fontSize="clamp(2.6rem, 7vw, 5rem)"
           text="Camilo Quirós M."
           speed={2.9}
           delay={0}
@@ -34,7 +34,7 @@ const Home = () => (
           disabled={false}
         />
         <div className="hero-subline">
-          <p style={{ fontFamily: "SFPro, sans-serif", fontSize: "1.35rem", color: "#b5b5b5" }}>
+          <p style={{ fontFamily: "SFPro, sans-serif", fontSize: "clamp(1rem, 3vw, 1.35rem)", color: "#b5b5b5" }}>
             Full Stack Developer
           </p>
           <div className="hero-icons" aria-label="Social links">
