@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
+
 @font-face {
   font-family: "SF Pro Text";
   src: url("/fonts/SF-Pro-Text-Regular.otf") format("opentype");
@@ -38,6 +42,10 @@
   body {
     font-family: "SF Pro Text", system-ui, sans-serif;
   }
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 :root {
@@ -100,6 +108,7 @@ body {
 }
 
 .rays-overlay {  
+  height: 130vh;
   z-index: 4;
   position: absolute;
   inset: 0;
@@ -129,6 +138,7 @@ body {
 }
 
 .hero-subline {
+  margin-top: 10px;
   display: flex;
   align-items: center;
   gap: 18px;
@@ -145,8 +155,8 @@ body {
 }
 
 .hero-icon {
-  width: 34px;
-  height: 34px;
+  width: 40px;
+  height: 40px;
   border: 1px solid rgba(181, 181, 181, 0.45);
   border-radius: 999px;
   display: inline-flex;
@@ -159,8 +169,8 @@ body {
 }
 
 .hero-icon svg {
-  width: 18px;
-  height: 18px;
+  width: 20px;
+  height: 20px;
   fill: currentColor;
 }
 
@@ -188,7 +198,7 @@ body {
   border: 1px solid rgba(181, 181, 181, 0.6);
   background: transparent;
   color: #d6d6d6;
-  font-size: 0.95rem;
+  font-size: 1.05rem;
   font-weight: 500;
   letter-spacing: 0.01em;
   display: inline-flex;
@@ -353,4 +363,167 @@ body {
 .right::after {
   right: 0;
   background: linear-gradient(270deg, #121212 0%, rgba(0, 0, 0, 0) 100%);
+}
+
+nav {
+  margin-top: 30px;
+  border-radius: 50px;
+  padding: 19px 28px;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: fit-content;
+  z-index: 1000;
+  background: rgba(18, 18, 18, 0.35);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  gap: 2rem;
+}
+
+l {
+  cursor: pointer;
+}
+
+.content-container {
+  margin-bottom: 10rem;
+}
+
+.skills-section {
+  position: relative;
+  padding: 120px 80px;
+  background: #121212;
+  overflow: hidden;
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.skills-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: none;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.skills-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  gap: 32px;
+}
+
+.skills-header {
+  gap: 5px;
+  display: grid;
+  max-width: 520px;
+}
+
+.skills-kicker {
+  text-transform: uppercase;
+  letter-spacing: 0.32em;
+  font-size: 0.75rem;
+  color: rgba(214, 214, 214, 0.55);
+}
+
+.skills-title {
+  font-size: clamp(2.4rem, 3vw + 1rem, 3.6rem);
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.skills-subtitle {
+  color: rgba(214, 214, 214, 0.7);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.skills-groups {
+  display: grid;
+  gap: 28px;
+}
+
+.skills-group {
+  padding: 18px 0 15px 0;
+  display: grid;
+  grid-template-columns: minmax(120px, 170px) 1fr;
+  gap: 24px;
+  align-items: start;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.skills-group:first-child {
+  border-top: none;
+  padding-top: 0;
+}
+
+.skills-group-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.skills-chips {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 0;
+  margin: 0;
+  justify-content: flex-start;
+}
+
+.skill-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(18, 18, 18, 0.65);
+  color: #e7e7e7;
+  font-size: 0.95rem;
+  letter-spacing: 0.01em;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.28);
+  transition: transform 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.skill-chip i {
+  font-size: 1rem;
+}
+
+.skill-chip:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.26);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+@media (max-width: 900px) {
+  .skills-section {
+    padding: 90px 24px;
+  }
+
+  .skills-group {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}
+
+@media (max-width: 600px) {
+  .skills-title {
+    font-size: 2.3rem;
+  }
+
+  .skill-chip {
+    font-size: 0.9rem;
+  }
 }

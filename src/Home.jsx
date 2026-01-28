@@ -2,7 +2,7 @@ import LightRays from "./components/LightRays/LightRays.jsx";
 import ShinyText from "./components/ShinyText.jsx";
 
 const Home = () => (
-  <section className="section hero" style={{ backgroundColor: "#121212" }}>
+  <section className="section hero" id="home" style={{ backgroundColor: "#121212" }}>
     <div className="rays-container" style={{ width: "100vw", height: "100vh" }}>
       <LightRays
         raysOrigin="top-center"
@@ -19,8 +19,9 @@ const Home = () => (
         distortion={0}
       />
       <div className="rays-overlay">
+      <div className="content-container">
         <ShinyText
-          fontSize="4.3rem"
+          fontSize="5rem"
           text="Camilo Quirós M."
           speed={2.9}
           delay={0}
@@ -33,7 +34,7 @@ const Home = () => (
           disabled={false}
         />
         <div className="hero-subline">
-          <p style={{ fontFamily: "SFPro, sans-serif", fontSize: "1.2rem", color: "#b5b5b5" }}>
+          <p style={{ fontFamily: "SFPro, sans-serif", fontSize: "1.35rem", color: "#b5b5b5" }}>
             Full Stack Developer
           </p>
           <div className="hero-icons" aria-label="Social links">
@@ -83,6 +84,7 @@ const Home = () => (
         </button>
 
       </div>
+    </div>
     </div>
   </section>
 );
